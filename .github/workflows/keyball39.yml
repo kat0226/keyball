@@ -31,7 +31,7 @@ jobs:
     - run: qmk compile -j 4 -kb keyball/keyball39 -km via
 
     - name: Archive firmwares
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: keyball39-firmwares
         path: __qmk__/*.hex
