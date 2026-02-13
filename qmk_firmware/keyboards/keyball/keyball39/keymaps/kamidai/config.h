@@ -21,10 +21,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 // 容量削減のため以下をオミット
-// #ifdef RGBLIGHT_ENABLE
-// #define RGBLIGHT_EFFECT_BREATHING
-// #define RGBLIGHT_EFFECT_RAINBOW_MOOD
-// #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+ #ifdef RGBLIGHT_ENABLE
+ #define RGBLIGHT_EFFECT_BREATHING
+ #define RGBLIGHT_EFFECT_RAINBOW_MOOD
+ #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 // #define RGBLIGHT_EFFECT_SNAKE
 // #define RGBLIGHT_EFFECT_KNIGHT
 // #define RGBLIGHT_EFFECT_CHRISTMAS
@@ -42,14 +42,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DYNAMIC_KEYMAP_LAYER_COUNT 7
 
 #define KEYBALL_CPI_DEFAULT 700       // 光学センサーPMW3360DM の解像度 (CPI) の規定値
-#define KEYBALL_SCROLL_DIV_DEFAULT 4  // スクロール速度の規定値
+#define KEYBALL_SCROLL_DIV_DEFAULT 6  // スクロール速度の規定値
 
 // ファームウェアのサイズを削減
 #define NO_ACTION_ONESHOT  // 392バイト
 
-#define IGNORE_MOD_TAP_INTERRUPT  // 10バイト
+#define IGNORE_MOD_TAP_INTERRUPT  // 10jバイト
 // #define TAPPING_FORCE_HOLD  // 34バイト
 // 下記三つで444バイト
 #define TAPPING_TERM 175
 // #define PERMISSIVE_HOLD
 // #define RETRO_TAPPING
+
+#define AUTO_MOUSE_TIME 1300
+
