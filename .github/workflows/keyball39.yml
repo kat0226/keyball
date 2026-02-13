@@ -20,6 +20,9 @@ jobs:
 
     - name: Setup QMK firmware
       uses: ./.github/actions/setup-qmk
+      
+    - name: Install dependencies
+      run: pip3 install appdirs
 
     - name: Install a link to own source
       run: ln -s $(pwd)/qmk_firmware/keyboards/keyball __qmk__/keyboards/keyball
