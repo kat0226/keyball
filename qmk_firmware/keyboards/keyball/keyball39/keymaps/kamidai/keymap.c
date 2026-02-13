@@ -61,54 +61,62 @@
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default
-  [0] = LAYOUT_universal(
-    KC_TAB   , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
-    KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                            KC_H     , KC_J     , KC_K     , KC_L     , KC_F5    ,
-    KC_Z     , KC_X     , KC_C     ,LT(2,KC_V),SFT_T(KC_B),                         SFT_T(KC_N), KC_M     , KC_COMMA , KC_DOT   , KC_SLASH ,
-    LT(1,KC_LANG2),ALT_T(KC_F13),LT(3,KC_ESC),CMD_T(KC_SPACE),CTL_T(KC_Y),LT(5,KC_Q),    KC_BSPC,CMD_T(KC_ENT),_______,_______,_______,LT(1,KC_LANG1)
+[0] = LAYOUT_split_3x6_3(
+    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
+    KC_A,    KC_S,    LT(3,KC_D), KC_F, KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    LT(3,KC_MINS),
+    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  MT(MOD_LCTL, KC_SLSH),
+             KC_LSFT, KC_LEFT, KC_RGHT, LT(1,KC_LANG2), LT(3,KC_SPC), MT(MOD_LGUI, KC_LANG1),      KC_BSPC, KC_ENT,  KC_RSFT
   ),
 
-  [1] = LAYOUT_universal(
-    _______  ,HYPR(KC_4),SGUI(KC_4),SGUI(KC_3),SGUI(KC_5),                           G(KC_LBRC),G(KC_RBRC), KC_UP    , KC_RIGHT , KC_TAB   ,
-    _______  ,S(KC_LEFT), C(KC_J)  , _______  , _______  ,                            KC_LEFT  , KC_DOWN  , C(KC_K)  ,S(KC_RIGHT), C(KC_Y) ,
-    C(KC_LEFT), _______ , _______  , _______  ,SFT_T_G_KC_A,                          G(KC_Z)  , G(KC_C)  , G(KC_X)  , G(KC_V)  ,G(KC_SLASH),
-    _______ , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
+  /* Layer 1: Numbers & Nav */
+  [1] = LAYOUT_split_3x6_3(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_PAST, KC_P1,   KC_P2,   KC_P3,   KC_PPLS,
+    KC_TRNS, LCTL_T(KC_VOLU), KC_BRIU, KC_HOME, KC_DOWN,                    KC_PSLS, KC_P4,   KC_P5,   KC_P6,   LCTL_T(KC_PMNS),
+    KC_RALT, KC_VOLD, KC_BRID, KC_LGUI, KC_LCTL,                            KC_P0,   KC_P7,   KC_P8,   KC_P9,   KC_PEQL,
+             KC_ESC,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_TAB
   ),
 
-  [2] = LAYOUT_universal(
-    _______  , KC_7     , KC_8     , KC_9     , _______  ,                            S(KC_4)  , KC_7     , KC_8     , KC_9     ,KC_BSLASH ,
-    KC_0     , KC_4     , KC_5     , KC_6     , _______  ,                            _______  , KC_4     , KC_5     , KC_6     , S(KC_5)  ,
-    _______  , KC_1     , KC_2     , KC_3     , _______  ,                    SFT_T(KC_NUMLOCK), KC_1     , KC_2     , KC_3     , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , KC_0     , _______  , _______  , _______  , _______  
+  /* Layer 2: Symbols (Minimal) */
+  [2] = LAYOUT_split_3x6_3(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_QUOT, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_SCLN, KC_TRNS,
+             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
-  [3] = LAYOUT_universal(
-    _______ , S(KC_2)   , S(KC_3)  , KC_QUOTE ,S(KC_QUOTE),                           _______  ,S(KC_RBRC), KC_RBRC  ,S(KC_EQUAL),S(KC_8)  ,
-    S(KC_GRAVE),S(KC_MINUS),S(KC_COMMA),S(KC_7),S(KC_BSLASH),                        S(KC_LBRC), KC_LBRC  , S(KC_0)  , KC_MINUS , KC_EQUAL ,
-    A(KC_BSLASH),S(KC_6), _______  ,S(KC_DOT) ,SFT_T_S_KC_SCOLON,               SFT_T(KC_GRAVE), S(KC_9)  , S(KC_1)  ,S(KC_SLASH),KC_SCOLON,
-    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
+  /* Layer 3: RGB & Brackets */
+  [3] = LAYOUT_split_3x6_3(
+    RGB_VAI, RGB_VAD, RGB_TOG, RGB_M_P, KC_UP,                              KC_EXLM, KC_AT,   KC_LPRN, KC_RPRN, KC_QUOT,
+    KC_LSFT, KC_VOLU, KC_BRIU, KC_HOME, KC_DOWN,                            KC_QUES, KC_HASH, KC_LBRC, KC_RBRC, KC_SCLN,
+    KC_RALT, KC_VOLD, KC_BRID, KC_LGUI, KC_LCTL,                            KC_MINS, KC_AMPR, KC_LABK, KC_RABK, KC_SLSH,
+             KC_ESC,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_TAB
   ),
 
-  [4] = LAYOUT_universal(
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______  
+  /* Layer 4: Reserved (Empty) */
+  [4] = LAYOUT_split_3x6_3(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
-  [5] = LAYOUT_universal(
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , SCRL_DVI , CPI_I100 , _______  , RGB_TOG  ,
-    _______  , _______  , _______  , _______  , _______  ,                            SCRL_DVD , CPI_D100 , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,        RESET  , KBC_RST  , _______  , _______  , _______  , _______  
+  /* Layer 5: Reserved (Empty) */
+  [5] = LAYOUT_split_3x6_3(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
-  [6] = LAYOUT_universal(
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    KC_LALT  , KC_LSFT  , _______  ,KC_MS_BTN1, _______ ,                            _______  ,KC_MS_BTN1,KC_MS_BTN3,KC_MS_BTN2, _______  ,
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______  
+  /* Layer 6: Auto Mouse Layer */
+  /* Any 0x5DAF/0x5DB0 are mapped to BTN1/BTN2 based on typical usage */
+  [6] = LAYOUT_split_3x6_3(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_BTN1, KC_BTN2, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+             KC_TRNS, KC_TRNS, KC_TRNS, KC_LANG2, KC_TRNS, KC_LANG1,        KC_TRNS, KC_TRNS, KC_TRNS
   )
+
 };
 // clang-format on
 
@@ -133,7 +141,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
       break;
 
     default:
-      rgblight_sethsv(HSV_OFF);
+      rgblight_sethsv(HSV_GREEN);
   }
 
   return state;
