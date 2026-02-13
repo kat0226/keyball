@@ -61,7 +61,7 @@
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default
-[0] = LAYOUT_split_3x6_3(
+[0] = LAYOUT_universal(
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     KC_A,    KC_S,    LT(3,KC_D), KC_F, KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    LT(3,KC_MINS),
     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  MT(MOD_LCTL, KC_SLSH),
@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   /* Layer 1: Numbers & Nav */
-  [1] = LAYOUT_split_3x6_3(
+  [1] = LAYOUT_universal(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_PAST, KC_P1,   KC_P2,   KC_P3,   KC_PPLS,
     KC_TRNS, LCTL_T(KC_VOLU), KC_BRIU, KC_HOME, KC_DOWN,                    KC_PSLS, KC_P4,   KC_P5,   KC_P6,   LCTL_T(KC_PMNS),
     KC_RALT, KC_VOLD, KC_BRID, KC_LGUI, KC_LCTL,                            KC_P0,   KC_P7,   KC_P8,   KC_P9,   KC_PEQL,
@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   /* Layer 2: Symbols (Minimal) */
-  [2] = LAYOUT_split_3x6_3(
+  [2] = LAYOUT_universal(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_QUOT, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_SCLN, KC_TRNS,
@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   /* Layer 3: RGB & Brackets */
-  [3] = LAYOUT_split_3x6_3(
+  [3] = LAYOUT_universal(
     RGB_VAI, RGB_VAD, RGB_TOG, RGB_M_P, KC_UP,                              KC_EXLM, KC_AT,   KC_LPRN, KC_RPRN, KC_QUOT,
     KC_LSFT, KC_VOLU, KC_BRIU, KC_HOME, KC_DOWN,                            KC_QUES, KC_HASH, KC_LBRC, KC_RBRC, KC_SCLN,
     KC_RALT, KC_VOLD, KC_BRID, KC_LGUI, KC_LCTL,                            KC_MINS, KC_AMPR, KC_LABK, KC_RABK, KC_SLSH,
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   /* Layer 4: Reserved (Empty) */
-  [4] = LAYOUT_split_3x6_3(
+  [4] = LAYOUT_universal(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   /* Layer 5: Reserved (Empty) */
-  [5] = LAYOUT_split_3x6_3(
+  [5] = LAYOUT_universal(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Layer 6: Auto Mouse Layer */
   /* Any 0x5DAF/0x5DB0 are mapped to BTN1/BTN2 based on typical usage */
-  [6] = LAYOUT_split_3x6_3(
+  [6] = LAYOUT_universal(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_BTN1, KC_BTN2, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
