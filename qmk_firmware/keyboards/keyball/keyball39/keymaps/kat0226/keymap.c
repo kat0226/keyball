@@ -93,11 +93,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   // レイヤーとLEDを連動させる
   switch (get_highest_layer(state)) {
     case click_layer:
-      rgblight_sethsv(HSV_WHITE);
+      rgblight_sethsv(HSV_BLUE);
       break;
 
-//    default:
-//      rgblight_mode(RGBLIGHT_MODE_RAINBOW_MOOD); 
+    default:
+      rgblight_sethsv(HSV_WHITE); 
   }
 
   return state;
