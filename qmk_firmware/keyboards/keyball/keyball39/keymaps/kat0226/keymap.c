@@ -97,7 +97,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
       break;
 
     default:
-      rgblight_mode(RGB_MODE_RAINBOW);  
+      rgblight_mode(RGBLIGHT_MODE_RAINBOW_MOOD); 
   }
 
   return state;
