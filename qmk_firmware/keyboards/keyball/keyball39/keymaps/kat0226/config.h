@@ -32,7 +32,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define RGBLIGHT_EFFECT_RGB_TEST
 // #define RGBLIGHT_EFFECT_ALTERNATING
 // #define RGBLIGHT_EFFECT_TWINKLE
-// #endif
+#endif
 
 #define COMBO_COUNT 9
 
