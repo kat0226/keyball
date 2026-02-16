@@ -29,7 +29,7 @@
 
 // 容量オーバーのため不使用（VIAをOFFにすれば、使用可能）
 // #include "features/overrides.h"
-#include "features/combo.h"
+// #include "features/combo.h"
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
