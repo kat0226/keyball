@@ -97,10 +97,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
       break;
 
     default:
-      rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL);  }
+      rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL);  
+  }
 
   return state;
-}j
+}
 
 #ifdef OLED_ENABLE
 
