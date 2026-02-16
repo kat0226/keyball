@@ -15,33 +15,6 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
- * -------------------------------------------------------------------
- *
- * 参考文献：
- * - リポジトリ：
- *   https://github.com/kamiichi99/keyball/tree/main/qmk_firmware/keyboards/keyball/keyball39/keymaps/kamidai
- *
- * - keyballの販売ページ
- *   https://shirogane-lab.com/collections/all
- *
- * コード表：
- * - 公式ファームウェアのキーコード：
- *   KBC_RST(0x5DA5): Keyball 設定のリセット
- *   KBC_SAVE(0x5DA6): 現在の Keyball 設定を EEPROM に保存します
- *   CPI_I100(0x5DA7): CPI を 100 増加させます(最大:12000)
- *   CPI_D100(0x5DA8): CPI を 100 減少させます(最小:100)
- *   CPI_I1K(0x5DA9): CPI を 1000 増加させます(最大:12000)
- *   CPI_D1K(0x5DAA): CPI を 1000 減少させます(最小:100)
- *   SCRL_TO(0x5DAB): タップごとにスクロールモードの ON/OFF を切り替えます
- *   SCRL_MO(0x5DAC): キーを押している間、スクロールモードになります
- *   SCRL_DVI(0x5DAD): スクロール除数を１つ上げます(max D7 = 1/128)← 最もスクロール遅い
- *   SCRL_DVD(0x5DAE): スクロール除数を１つ下げます(min D0 = 1/1)← 最もスクロール速い
- *
- * - オリジナルのキーコード：
- *   KC_BACK_TO_LAYER0_BTN1(0x5DAF): レイヤー0に遷移できるBTN1
- *   KC_DOUBLE_CLICK_BTN1(0x5DB0): 1タップでダブルクリックできるBTN1
- *   KC_TRIPLE_CLICK_BTN1(0x5DB1): 1タップでトリプルクリックできるBTN1
  */
 
 #include QMK_KEYBOARD_H
@@ -62,52 +35,52 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default
   [0] = LAYOUT_universal(
-    KC_TAB   , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
-    KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                            KC_H     , KC_J     , KC_K     , KC_L     , KC_F5    ,
-    KC_Z     , KC_X     , KC_C     ,LT(2,KC_V),SFT_T(KC_B),                         SFT_T(KC_N), KC_M     , KC_COMMA , KC_DOT   , KC_SLASH ,
-    LT(1,KC_LANG2),ALT_T(KC_F13),LT(3,KC_ESC),CMD_T(KC_SPACE),CTL_T(KC_Y),LT(5,KC_Q),    KC_BSPC,CMD_T(KC_ENT),_______,_______,_______,LT(1,KC_LANG1)
+    KC_TAB   , KC_W      , KC_E      , KC_R      , KC_T      ,                                    KC_Y      , KC_U      , KC_I      , KC_O      , KC_P      ,
+    KC_A     , KC_S      , KC_D      , KC_F      , KC_G      ,                                    KC_H      , KC_J      , KC_K      , KC_L      , KC_F5     ,
+    KC_Z     , KC_X      , KC_C      ,LT(2,KC_V),SFT_T(KC_B),                                  SFT_T(KC_N), KC_M      , KC_COMMA , KC_DOT    , KC_SLASH ,
+    LT(1,KC_LNG2),ALT_T(KC_F13),LT(3,KC_ESC),CMD_T(KC_SPACE),CTL_T(KC_Y),LT(5,KC_Q),    KC_BSPC,CMD_T(KC_ENT),_______,_______,_______,LT(1,KC_LNG1)
   ),
 
   [1] = LAYOUT_universal(
-    _______  ,HYPR(KC_4),SGUI(KC_4),SGUI(KC_3),SGUI(KC_5),                           G(KC_LBRC),G(KC_RBRC), KC_UP    , KC_RIGHT , KC_TAB   ,
-    _______  ,S(KC_LEFT), C(KC_J)  , _______  , _______  ,                            KC_LEFT  , KC_DOWN  , C(KC_K)  ,S(KC_RIGHT), C(KC_Y) ,
-    C(KC_LEFT), _______ , _______  , _______  ,SFT_T_G_KC_A,                          G(KC_Z)  , G(KC_C)  , G(KC_X)  , G(KC_V)  ,G(KC_SLASH),
-    _______ , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
+    _______  ,HYPR(KC_4),SGUI(KC_4),SGUI(KC_3),SGUI(KC_5),                                    G(KC_LBRC),G(KC_RBRC), KC_UP    , KC_RIGHT , KC_TAB    ,
+    _______  ,S(KC_LEFT), C(KC_J)  , _______  , _______  ,                                    KC_LEFT  , KC_DOWN  , C(KC_K)  ,S(KC_RIGHT), C(KC_Y) ,
+    C(KC_LEFT), _______ , _______  , _______  ,SFT_T_G_KC_A,                                  G(KC_Z)  , G(KC_C)  , G(KC_X)  , G(KC_V)  ,G(KC_SLASH),
+    _______ , _______  , _______  , _______  , _______  , _______  ,       _______  , _______  , _______  , _______  , _______  , _______
   ),
 
   [2] = LAYOUT_universal(
-    _______  , KC_7     , KC_8     , KC_9     , _______  ,                            S(KC_4)  , KC_7     , KC_8     , KC_9     ,KC_BSLASH ,
-    KC_0     , KC_4     , KC_5     , KC_6     , _______  ,                            _______  , KC_4     , KC_5     , KC_6     , S(KC_5)  ,
-    _______  , KC_1     , KC_2     , KC_3     , _______  ,                    SFT_T(KC_NUMLOCK), KC_1     , KC_2     , KC_3     , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , KC_0     , _______  , _______  , _______  , _______  
+    _______  , KC_7      , KC_8      , KC_9      , _______  ,                                    S(KC_4)  , KC_7      , KC_8      , KC_9      ,KC_BSLS ,
+    KC_0     , KC_4      , KC_5      , KC_6      , _______  ,                                    _______  , KC_4      , KC_5      , KC_6      , S(KC_5)  ,
+    _______  , KC_1      , KC_2      , KC_3      , _______  ,                     SFT_T(KC_NUM), KC_1      , KC_2      , KC_3      , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,       _______  , KC_0      , _______  , _______  , _______  , _______  
   ),
 
   [3] = LAYOUT_universal(
-    _______ , S(KC_2)   , S(KC_3)  , KC_QUOTE ,S(KC_QUOTE),                           _______  ,S(KC_RBRC), KC_RBRC  ,S(KC_EQUAL),S(KC_8)  ,
-    S(KC_GRAVE),S(KC_MINUS),S(KC_COMMA),S(KC_7),S(KC_BSLASH),                        S(KC_LBRC), KC_LBRC  , S(KC_0)  , KC_MINUS , KC_EQUAL ,
-    A(KC_BSLASH),S(KC_6), _______  ,S(KC_DOT) ,SFT_T_S_KC_SCOLON,               SFT_T(KC_GRAVE), S(KC_9)  , S(KC_1)  ,S(KC_SLASH),KC_SCOLON,
-    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
+    _______ , S(KC_2)    , S(KC_3)  , KC_QUOTE ,S(KC_QUOTE),                                    _______  ,S(KC_RBRC), KC_RBRC  ,S(KC_EQUAL),S(KC_8)  ,
+    S(KC_GRAVE),S(KC_MINUS),S(KC_COMMA),S(KC_7),S(KC_BSLS),                                     S(KC_LBRC), KC_LBRC  , S(KC_0)  , KC_MINUS , KC_EQUAL ,
+    A(KC_BSLS),S(KC_6), _______  ,S(KC_DOT) ,SFT_T_S_KC_SCOLON,                               SFT_T(KC_GRAVE), S(KC_9)  , S(KC_1)  ,S(KC_SLASH),KC_SCLN,
+    _______  , _______  , _______  , _______  , _______  , _______  ,       _______  , _______  , _______  , _______  , _______  , _______
   ),
 
   [4] = LAYOUT_universal(
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______  
+    _______  , _______  , _______  , _______  , _______  ,                                    _______  , _______  , _______  , _______  , _______  ,
+    _______  , _______  , _______  , _______  , _______  ,                                    _______  , _______  , _______  , _______  , _______  ,
+    _______  , _______  , _______  , _______  , _______  ,                                    _______  , _______  , _______  , _______  , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,       _______  , _______  , _______  , _______  , _______  , _______  
   ),
 
   [5] = LAYOUT_universal(
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , SCRL_DVI , CPI_I100 , _______  , RGB_TOG  ,
-    _______  , _______  , _______  , _______  , _______  ,                            SCRL_DVD , CPI_D100 , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,        RESET  , KBC_RST  , _______  , _______  , _______  , _______  
+    _______  , _______  , _______  , _______  , _______  ,                                    _______  , SCRL_DVI , CPI_I100 , _______  , RGB_TOG  ,
+    _______  , _______  , _______  , _______  , _______  ,                                    SCRL_DVD , CPI_D100 , _______  , _______  , _______  ,
+    _______  , _______  , _______  , _______  , _______  ,                                    _______  , _______  , _______  , _______  , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,        QK_BOOT  , KBC_RST  , _______  , _______  , _______  , _______  
   ),
 
   [6] = LAYOUT_universal(
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    KC_LALT  , KC_LSFT  , _______  ,KC_MS_BTN1, _______ ,                            _______  ,KC_MS_BTN1,KC_MS_BTN3,KC_MS_BTN2, _______  ,
-    _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______  , _______  ,
-    _______  , _______  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______  
+    _______  , _______  , _______  , _______  , _______  ,                                    _______  , _______  , _______  , _______  , _______  ,
+    KC_LALT  , KC_LSFT  , _______  ,KC_MS_BTN1, _______ ,                                    _______  ,KC_MS_BTN1,KC_MS_BTN3,KC_MS_BTN2, _______  ,
+    _______  , _______  , _______  , _______  , _______  ,                                    _______  , _______  , _______  , _______  , _______  ,
+    _______  , _______  , _______  , _______  , _______  , _______  ,       _______  , _______  , _______  , _______  , _______  , _______  
   )
 };
 // clang-format on
