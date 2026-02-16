@@ -8,6 +8,7 @@
  * config.h: #define COMBO_COUNT 2（=実際に設定するコンボ数）
  */
 
+/*
 enum combos {
   COMBO_F14,
   COMBO_F15
@@ -56,3 +57,5 @@ combo_t key_combos[] = {
     COMBO(combo_MINUS_SPACE, COMBO_MINUS_SPACE),
 
 };
+
+ */
