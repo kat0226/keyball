@@ -29,17 +29,13 @@ jobs:
 
     strategy:
       matrix:
-        keyboard: [ keyball39, keyball44, keyball61, keyball46, one47 ]
-        keymap: [ test, default, via ]
-        include:
-          - keyboard: keyball46
-            keymap:   test_Left
-          - keyboard: keyball46
-            keymap:   test_Both
-          - keyboard: keyball46
-            keymap:   via_Left
-          - keyboard: keyball46
-            keymap:   via_Both
+        # 変更点1: keyball39 だけにする
+        keyboard: [ keyball39 ]
+        # 変更点2: 'kat0226' を追加。不要なら test や default は消してOK
+        # (念のため via は比較用に残していますが、不要なら消しても良いです)
+        keymap: [ via, kat0226 ]
+        
+        # 変更点3: keyball46用の include 設定はすべて削除しました
 
     uses: ./.github/workflows/build-firmware.yml
     with:
