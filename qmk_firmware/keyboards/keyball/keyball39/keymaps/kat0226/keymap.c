@@ -95,22 +95,12 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     case click_layer:
       rgblight_sethsv(HSV_WHITE);
       break;
-    case 1:
-      rgblight_sethsv(HSV_RED);
-      break;
-    case 2:
-      rgblight_sethsv(HSV_YELLOW);
-      break;
-    case 3:
-      rgblight_sethsv(HSV_GREEN);
-      break;
 
     default:
-      rgblight_sethsv(HSV_OFF);
-  }
+      rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL);  }
 
   return state;
-}
+}j
 
 #ifdef OLED_ENABLE
 
